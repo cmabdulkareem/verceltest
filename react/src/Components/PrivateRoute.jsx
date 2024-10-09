@@ -10,16 +10,18 @@ function PrivateRoute({children}) {
 
  useEffect(()=>{
   const checkAuth = ()=>{
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/checkAuth`,{withCredentials: true})
-     .then((response)=>{
-        console.log(response.data.authenticated);
-        setIsAuthenticated(response.data.authenticated)
-         })
-
-     .catch((error)=>{
-      console.log("Authentication check failed",error);
-      // setIsAuthenticated(false)
+    axios
+      .get(`${import.meta.env.VITE_SERVER_URL}/checkAuth`, {
+        withCredentials: true,
       })
+      .then((response) => {
+        setIsAuthenticated(response.data.authenticated);
+      })
+
+      .catch((error) => {
+        console.log("Authentication check failed", error);
+        // setIsAuthenticated(false)
+      });
       // .finally(()=>{
       //   setLoading(false)
       // })
