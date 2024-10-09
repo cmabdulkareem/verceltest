@@ -1,8 +1,5 @@
 {
   "rewrites":  [
     {"source": "/(.*)", "destination": "/"}
-  ],
-  "scripts": {
-    "build": "npm run build"
-  }
+  ]
 }
