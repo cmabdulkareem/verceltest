@@ -13,7 +13,7 @@ const app =express()
 const PORT = process.env.PORT || 3000
 
 const corsOptions = {
-      origin:"https://verceltest-two-olive.vercel.app",
+      origin:"https://verceltest-pi-liard.vercel.app",
       method: "GET,POST,HEAD,PUT,PATCH,DELETE",
       credentials: true,
       allowedHeader: "Content-Type, Authorization"
