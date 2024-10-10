@@ -10,11 +10,11 @@ import mongoose from 'mongoose'
 import userRouter from './routes/userRoutes.js'
 dotenv.config()
 
-const app = express()
-const PORT = process.env.PORT || 3000
+const app =express()
+const PORT = process.env.PORT || 3000 
 
 const corsOptions = {
-      origin: "https://verceltest-navy-xi.vercel.app",
+      origin:"https://verceltest-navy-xi.vercel.app",
       method: "GET,POST,HEAD,PUT,PATCH,DELETE",
       credentials: true,
       allowedHeader: "Content-Type, Authorization"
@@ -37,8 +37,13 @@ app.use(session({
     ttl: 24 * 60 * 60 // Session expiry in seconds (1 day)
   }),
   cookie: {
+<<<<<<< HEAD
     secure: false, // Set to true in production if you're using HTTPS
     maxAge: 1000 * 60 * 60 * 24 // 1 day
+=======
+      secure: true,
+      maxAge: 1000 * 60 * 60 * 24
+>>>>>>> b5dc4622000d5870c9697bc929b10bc48728dce9
   }
 }))
 
