@@ -65,7 +65,7 @@ export const handleLogin =(req,res)=>{
 
 export const authChecking =(req,res)=>{
   if(req.session.userId){
-    res.status(200).json({authenticated: true})
+    return res.status(200).json({authenticated: true})
   }else{
     res.status(200).json({authenticated: false})
   }
