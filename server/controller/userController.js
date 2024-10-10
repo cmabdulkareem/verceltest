@@ -73,7 +73,7 @@ export const authChecking =(req,res)=>{
 
   export const getDashboard =(req,res)=>{
     if(!req.session.userId){
-      res.status(401).json({error:"not authenticatrd"})
+      return res.status(401).json({error:"not authenticatrd"})
     }
 
           UserModel.findById(req.session.userId)
