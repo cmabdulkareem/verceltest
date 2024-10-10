@@ -73,20 +73,19 @@ export const authChecking =(req,res)=>{
 
   export const getDashboard =(req,res)=>{
     if(!req.session.userId){
-      res.status(401).json({error:"not authenticatrd"})
+      return res.status(401).json({error:"not authenticatrd"})
     }
 
           UserModel.findById(req.session.userId)
                 .then((user)=>{
                   if(!user){
-                    res.status(404).json({error:"user not found"})
+                    return res.status(404).json({error:"user not found"})
                   }
-                  res.status(200).json({email:user.email})
+                  return res.status(200).json({email:user.email})
                 })
                 .catch((error)=>{
-                  res.status(500).json({error:'internal server error'})
+                  return res.status(500).json({error:'internal server error'})
                 })
-
   }
 
 
