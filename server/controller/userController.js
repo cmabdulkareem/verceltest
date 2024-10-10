@@ -79,7 +79,7 @@ export const authChecking =(req,res)=>{
           UserModel.findById(req.session.userId)
                 .then((user)=>{
                   if(!user){
-                    res.status(404).json({error:"user not found"})
+                    return res.status(404).json({error:"user not found"})
                   }
                   res.status(200).json({email:user.email})
                 })
