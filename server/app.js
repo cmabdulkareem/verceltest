@@ -37,13 +37,8 @@ app.use(session({
     ttl: 24 * 60 * 60 // Session expiry in seconds (1 day)
   }),
   cookie: {
-<<<<<<< HEAD
-    secure: false, // Set to true in production if you're using HTTPS
-    maxAge: 1000 * 60 * 60 * 24 // 1 day
-=======
       secure: true,
       maxAge: 1000 * 60 * 60 * 24
->>>>>>> b5dc4622000d5870c9697bc929b10bc48728dce9
   }
 }))
 
